@@ -1,0 +1,23 @@
+package kietdt.example;
+
+import java.util.logging.Logger;
+
+class Animal {
+    protected static final Logger logger = Logger.getLogger(Animal.class.getName());
+
+    void speak() {
+        logger.info("Animal speaks");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void speak() {
+        logger.info("Dog barks");
+    }
+
+    public static void main(String[] args) {
+        Animal animal = new Dog();
+        animal.speak(); // Kết quả: "Dog barks"
+    }
+}
